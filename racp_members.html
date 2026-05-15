@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RACP Member Alert — AGM 29 May 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1a2e4a;
+  --red: #8b1a1a;
+  --red-light: #fdf0f0;
+  --amber: #92600a;
+  --amber-light: #fef9ec;
+  --border: #ddd8ce;
+  --bg: #f7f5f1;
+  --text: #2a2420;
+  --muted: #6a625a;
+  --white: #ffffff;
+}
+body { font-family: 'Georgia', serif; background: var(--bg); }
+.site { max-width: 100%; }
+
+.masthead { background: var(--navy); padding: 2.5rem 2rem 2rem; }
+.masthead-eyebrow { font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7fa8cc; margin-bottom: 0.6rem; }
+.masthead h1 { font-size: 30px; font-weight: normal; color: #fff; line-height: 1.25; margin-bottom: 0.6rem; max-width: 680px; }
+.masthead-sub { font-family: Arial, sans-serif; font-size: 14px; color: #a8c4d8; line-height: 1.7; max-width: 620px; }
+
+.urgent-bar { background: var(--red); padding: 0.85rem 2rem; }
+.urgent-bar span { font-family: Arial, sans-serif; font-size: 13px; color: #fff; line-height: 1.6; }
+
+.nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0; overflow-x: auto; }
+.nav a { display: block; padding: 0.75rem 1rem; font-size: 12px; font-family: Arial, sans-serif; color: var(--text); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; letter-spacing: 0.02em; }
+.nav a:hover { color: var(--navy); border-bottom-color: var(--navy); }
+
+.content { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+.section { padding-top: 2.25rem; }
+.section-rule { border: none; border-top: 1px solid var(--border); margin-bottom: 1.5rem; }
+.section h2 { font-size: 22px; font-weight: normal; color: var(--navy); margin-bottom: 0.85rem; }
+.section p { font-size: 14px; font-family: Arial, sans-serif; color: var(--text); line-height: 1.85; margin-bottom: 0.9rem; }
+.section p:last-child { margin-bottom: 0; }
+
+.lead { font-size: 16px; font-family: Georgia, serif; color: var(--text); line-height: 1.85; margin-bottom: 1.25rem; font-style: italic; border-left: 3px solid var(--navy); padding-left: 1.1rem; }
+
+.concern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 1.5rem; }
+.concern-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 8px; padding: 1.1rem 1.2rem; border-top: 3px solid var(--red); }
+.concern-card h3 { font-size: 12px; font-weight: bold; font-family: Arial, sans-serif; color: var(--red); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
+.concern-card p { font-size: 13px; font-family: Arial, sans-serif; color: var(--text); line-height: 1.65; margin: 0; }
+
+.fact-box { background: var(--amber-light); border: 0.5px solid #e0c080; border-radius: 8px; padding: 1.1rem 1.35rem; margin: 1.35rem 0; }
+.fact-label { font-size: 10px; font-family: Arial, sans-serif; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 7px; }
+.fact-box p { font-size: 13px; font-family: Arial, sans-serif; color: #4a3800; line-height: 1.7; margin: 0; }
+
+.tl { margin-top: 1.35rem; }
+.tl-row { display: flex; gap: 1rem; padding-bottom: 1.35rem; }
+.tl-left { display: flex; flex-direction: column; align-items: flex-end; min-width: 80px; }
+.tl-date { font-size: 11px; font-weight: bold; font-family: Arial, sans-serif; color: var(--muted); text-align: right; margin-bottom: 4px; white-space: nowrap; }
+.tl-connector { display: flex; flex-direction: column; align-items: center; }
+.tl-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--navy); flex-shrink: 0; margin-top: 1px; }
+.tl-dot.red { background: var(--red); }
+.tl-line { width: 1px; background: var(--border); flex: 1; margin-top: 4px; min-height: 20px; }
+.tl-row:last-child .tl-line { display: none; }
+.tl-body { flex: 1; }
+.tl-title { font-size: 13px; font-weight: bold; font-family: Arial, sans-serif; color: var(--navy); margin-bottom: 4px; }
+.tl-desc { font-size: 13px; font-family: Arial, sans-serif; color: var(--muted); line-height: 1.65; }
+
+.doc-list { margin-top: 1.35rem; border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--white); }
+.doc-item { display: flex; align-items: center; gap: 14px; padding: 1rem 1.1rem; border-bottom: 0.5px solid var(--border); }
+.doc-item:last-child { border-bottom: none; }
+.doc-badge { min-width: 38px; height: 38px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.doc-badge.ready { background: #e8f5ee; }
+.doc-badge.ready span { font-size: 10px; font-weight: bold; font-family: Arial, sans-serif; color: #0f6e56; }
+.doc-badge.pending { background: #f0eeea; }
+.doc-badge.pending span { font-size: 10px; font-weight: bold; font-family: Arial, sans-serif; color: var(--muted); }
+.doc-info { flex: 1; min-width: 0; }
+.doc-title { font-size: 13px; font-family: Arial, sans-serif; font-weight: bold; color: var(--navy); margin-bottom: 3px; }
+.doc-desc { font-size: 12px; font-family: Arial, sans-serif; color: var(--muted); line-height: 1.5; }
+.doc-link { font-size: 12px; font-family: Arial, sans-serif; color: #185FA5; text-decoration: none; padding: 4px 10px; border: 0.5px solid #185FA5; border-radius: 4px; white-space: nowrap; }
+.doc-link:hover { background: #e6f1fb; }
+.doc-pending-label { font-size: 12px; font-family: Arial, sans-serif; color: var(--muted); font-style: italic; white-space: nowrap; }
+
+.action-steps { margin-top: 1.35rem; }
+.action-step { display: flex; gap: 1.1rem; padding: 1.1rem 1.2rem; background: var(--white); border: 0.5px solid var(--border); border-radius: 8px; margin-bottom: 12px; }
+.step-num { font-size: 26px; font-weight: normal; color: var(--navy); min-width: 32px; font-family: Georgia, serif; line-height: 1; padding-top: 2px; }
+.step-body h3 { font-size: 14px; font-weight: bold; font-family: Arial, sans-serif; color: var(--navy); margin-bottom: 6px; }
+.step-body p { font-size: 13px; font-family: Arial, sans-serif; color: var(--text); line-height: 1.7; margin: 0; }
+.step-body a { color: #185FA5; }
+
+.question-list { margin-top: 1.35rem; background: var(--white); border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+.q-item { padding: 0.9rem 1.1rem; border-bottom: 0.5px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+.q-item:last-child { border-bottom: none; }
+.q-mark { font-size: 14px; font-weight: bold; color: var(--white); background: var(--navy); font-family: Arial, sans-serif; min-width: 22px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.q-text { font-size: 13px; font-family: Arial, sans-serif; color: var(--text); line-height: 1.7; }
+
+.disclaimer { background: #f0eeea; border-radius: 8px; padding: 1.1rem 1.35rem; margin-top: 1.75rem; }
+.disclaimer p { font-size: 12px; font-family: Arial, sans-serif; color: var(--muted); line-height: 1.75; margin: 0; }
+
+.footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; background: var(--white); margin-top: 2rem; }
+.footer p { font-size: 12px; font-family: Arial, sans-serif; color: var(--muted); line-height: 1.75; max-width: 900px; margin: 0 auto; }
+
+@media (max-width: 600px) {
+  .masthead h1 { font-size: 22px; }
+  .concern-grid { grid-template-columns: 1fr; }
+  .tl-left { min-width: 60px; }
+  .nav a { font-size: 11px; padding: 0.65rem 0.7rem; }
+}
+</style>
+</head>
+<body>
+<div class="site">
+
+  <div class="masthead">
+    <div class="masthead-eyebrow">Royal Australasian College of Physicians — Member Alert</div>
+    <h1>The AGM on 29 May should not proceed</h1>
+    <p class="masthead-sub">The 22 April EGM was disrupted, the vote was not scrutineered, and two regulators are investigating. Proceeding with the AGM before these matters are resolved would compound an already serious governance failure.</p>
+  </div>
+
+  <div class="urgent-bar">
+    <span><strong>AGM scheduled: 29 May 2026.</strong> Members have fewer than two weeks to act. Read this page and contact the RACP to demand a postponement.</span>
+  </div>
+
+  <nav class="nav">
+    <a href="#why">Why delay?</a>
+    <a href="#what-happened">What happened</a>
+    <a href="#questions">Unanswered questions</a>
+    <a href="#documents">Documents</a>
+    <a href="#action">What you can do</a>
+  </nav>
+
+  <div class="content">
+
+    <div class="section" id="why">
+      <hr class="section-rule">
+      <h2>Why the AGM must be delayed</h2>
+      <p class="lead">On 22 April 2026, a validly constituted EGM was taken over by the President-Elect in defiance of a Board resolution. The vote was not scrutineered. No official result has been issued. Two regulators are now investigating. Holding the AGM on 29 May — before any of this is resolved — would be premature and potentially unlawful.</p>
+      <p>The RACP Constitution and basic principles of corporate governance require that before the College proceeds to its most significant annual meeting, it must establish with certainty who its legitimate board is, whether the 22 April vote was valid, and what instructions have been issued by the ACNC and the Australian Medical Council (AMC). None of these questions has been answered.</p>
+      <p>Members who vote at an AGM held under these conditions may be voting on resolutions with an uncertain or contested board. That is not a technicality. It goes to the legitimacy of every decision made at the meeting.</p>
+      <div class="concern-grid">
+        <div class="concern-card">
+          <h3>No valid vote result</h3>
+          <p>CorpVote has issued no official, scrutineered result from the 22 April EGM. Without a valid result, the College cannot confirm the legal composition of its board.</p>
+        </div>
+        <div class="concern-card">
+          <h3>Regulators investigating</h3>
+          <p>Both the ACNC and AMC have written to the RACP requesting clarity and have suspended changes to board listings on their websites pending resolution.</p>
+        </div>
+        <div class="concern-card">
+          <h3>Competing boards</h3>
+          <p>Dr Chandran has purported to appoint a new board and reinstate a stood-down Company Secretary. ACNC and ASIC listings were altered. The legal board composition is unresolved.</p>
+        </div>
+        <div class="concern-card">
+          <h3>No member communication</h3>
+          <p>Members have received no official explanation of what occurred on 22 April or what it means for the AGM. Proceeding without disclosure is a serious governance failure.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="what-happened">
+      <hr class="section-rule">
+      <h2>What happened on 22 April</h2>
+      <p>The following is drawn from documented accounts and publicly available statements.</p>
+      <div class="fact-box">
+        <div class="fact-label">Context</div>
+        <p>The Board had resolved by majority that independent director Dr Nick Buckmaster should chair the EGM, given that both the President and President-Elect had declared conflicts of interest in the resolution being put to members. Three of four remaining directors were unaware that Dr Chandran had separately engaged the College's own General Counsel to secure the chair role for herself.</p>
+      </div>
+      <div class="tl">
+        <div class="tl-row">
+          <div class="tl-left"><div class="tl-date">Morning</div><div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div></div>
+          <div class="tl-body"><div class="tl-title">Dr Chandran attempts to seize the chair</div><div class="tl-desc">Despite the Board resolution appointing Dr Buckmaster as chair, Dr Chandran moves to take the chair role. A dispute erupts between the Board, CEO, external lawyers, and Dr Chandran.</div></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-left"><div class="tl-date">During</div><div class="tl-connector"><div class="tl-dot red"></div><div class="tl-line"></div></div></div>
+          <div class="tl-body"><div class="tl-title">Police called; Board and CEO ejected</div><div class="tl-desc">Dr Chandran's husband calls police on the Board, CEO, and external lawyers. Police attend and leave without action. The Board, CEO, external lawyer, and scrutineer are barred from the room, which is physically secured by Dr Chandran's husband.</div></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-left"><div class="tl-date">During</div><div class="tl-connector"><div class="tl-dot red"></div><div class="tl-line"></div></div></div>
+          <div class="tl-body"><div class="tl-title">Meeting proceeds without scrutineer</div><div class="tl-desc">CorpVote redirects its camera and audio feed to Dr Chandran. The Board and CEO instruct CorpVote in writing to cease the meeting. CorpVote does not comply. The meeting continues without an independent scrutineer. Professor Martin's prepared statement is not delivered.</div></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-left"><div class="tl-date">Post-EGM</div><div class="tl-connector"><div class="tl-dot red"></div><div class="tl-line"></div></div></div>
+          <div class="tl-body"><div class="tl-title">Dr Chandran declares herself Chair and appoints new board</div><div class="tl-desc">Dr Chandran purports to assume the chair, appoints a new Company Secretary and board, and reinstates a stood-down officer. Board listings on ACNC and ASIC websites are subsequently altered. College staff contact Safe Work for protection.</div></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-left"><div class="tl-date">Post-EGM</div><div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div></div>
+          <div class="tl-body"><div class="tl-title">Regulators intervene</div><div class="tl-desc">The ACNC and AMC write to the RACP requesting clarity on EGM irregularities and suspend further changes to board listings on their websites pending a resolution meeting.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="questions">
+      <hr class="section-rule">
+      <h2>Questions that must be answered before the AGM</h2>
+      <p>No member should be asked to vote at an AGM while the following remain unresolved.</p>
+      <div class="question-list">
+        <div class="q-item"><div class="q-mark">Q</div><div class="q-text">Has CorpVote issued an official, scrutineered vote result from the 22 April EGM? If not, why not, and when will it do so?</div></div>
+        <div class="q-item"><div class="q-mark">Q</div><div class="q-text">Which board does the ACNC currently recognise as the legitimate governing body of the RACP? What instructions have the ACNC issued to the College?</div></div>
+        <div class="q-item"><div class="q-mark">Q</div><div class="q-text">Was the EGM lawfully constituted given that the Board's appointed chair was physically barred from the room and the scrutineer was excluded?</div></div>
+        <div class="q-item"><div class="q-mark">Q</div><div class="q-text">What is the legal status of the board and Company Secretary appointments made by Dr Chandran after the EGM?</div></div>
+        <div class="q-item"><div class="q-mark">Q</div><div class="q-text">What has the General Counsel, David Ibrahim, been instructed to do, and by whom, since the EGM?</div></div>
+        <div class="q-item"><div class="q-mark">Q</div><div class="q-text">How can the AGM produce valid resolutions when the composition of the board that will implement them is in legal dispute?</div></div>
+      </div>
+    </div>
+
+    <div class="section" id="documents">
+      <hr class="section-rule">
+      <h2>Documents</h2>
+      <p>Replace the placeholder links below with your Google Drive file links before publishing. Set each Drive file to "anyone with the link can view."</p>
+      <div class="doc-list">
+        <div class="doc-item">
+          <div class="doc-badge ready"><span>PDF</span></div>
+          <div class="doc-info">
+            <div class="doc-title">RACP governance timeline: key events 2019–2026</div>
+            <div class="doc-desc">Full chronological account of the governance dispute from the ACNC investigation to the EGM</div>
+          </div>
+          <a href="YOUR-DRIVE-LINK-HERE" class="doc-link">View</a>
+        </div>
+        <div class="doc-item">
+          <div class="doc-badge ready"><span>PDF</span></div>
+          <div class="doc-info">
+            <div class="doc-title">Professor Martin's undelivered EGM statement (22 April 2026)</div>
+            <div class="doc-desc">Statement prepared for the EGM but not delivered after the Board was barred from the room</div>
+          </div>
+          <a href="YOUR-DRIVE-LINK-HERE" class="doc-link">View</a>
+        </div>
+        <div class="doc-item">
+          <div class="doc-badge ready"><span>PDF</span></div>
+          <div class="doc-info">
+            <div class="doc-title">ACNC and AMC correspondence</div>
+            <div class="doc-desc">Regulator letters requesting clarity on EGM irregularities and confirming suspension of website changes</div>
+          </div>
+          <a href="YOUR-DRIVE-LINK-HERE" class="doc-link">View</a>
+        </div>
+        <div class="doc-item">
+          <div class="doc-badge ready"><span>PDF</span></div>
+          <div class="doc-info">
+            <div class="doc-title">CorpVote communications</div>
+            <div class="doc-desc">Written instructions from the Board to CorpVote to cease the meeting and CorpVote's non-response</div>
+          </div>
+          <a href="YOUR-DRIVE-LINK-HERE" class="doc-link">View</a>
+        </div>
+        <div class="doc-item">
+          <div class="doc-badge pending"><span>PDF</span></div>
+          <div class="doc-info">
+            <div class="doc-title">Psychological observer reports (Oct 2025–Feb 2026)</div>
+            <div class="doc-desc">Professional assessment of psychosocial safety at board meetings</div>
+          </div>
+          <span class="doc-pending-label">To be added</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="action">
+      <hr class="section-rule">
+      <h2>What you can do</h2>
+      <p>Members have standing to demand that the College postpone the AGM. Here is how to act now.</p>
+      <div class="action-steps">
+        <div class="action-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Write to the RACP CEO and Board</h3>
+            <p>Contact the College at <a href="https://www.racp.edu.au">racp.edu.au</a> and state that you oppose holding the AGM on 29 May while the EGM result is unresolved and regulators are investigating. Request written confirmation that the AGM will be postponed.</p>
+          </div>
+        </div>
+        <div class="action-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Write to the ACNC</h3>
+            <p>As an RACP member you can contact the Australian Charities and Not-for-profits Commission at <a href="https://www.acnc.gov.au">acnc.gov.au</a> to raise concerns. Reference the 22 April EGM, the unresolved vote result, and the competing board appointments.</p>
+          </div>
+        </div>
+        <div class="action-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Share this page with other members</h3>
+            <p>Most members have received no official communication about what occurred on 22 April. Share this page with colleagues. The more members who raise concerns directly with the College and regulators, the harder it becomes to proceed without accountability.</p>
+          </div>
+        </div>
+        <div class="action-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Read the documents</h3>
+            <p>Professor Martin's undelivered statement, the ACNC and AMC correspondence, and the CorpVote communications together make the case clearly. Read them before the AGM date.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <p>This site is maintained by anonymous concerned RACP members. It is not affiliated with the RACP, its Board, or any of the named individuals. All information is drawn from documented sources. If you believe any statement is factually inaccurate, please contact us at [YOUR EMAIL HERE]. Last updated May 2026.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>This is an independent member resource. It does not constitute legal advice. Members are encouraged to read the RACP Constitution and seek independent advice about their rights as members of the College.</p>
+  </div>
+
+</div>
+</body>
+</html>
